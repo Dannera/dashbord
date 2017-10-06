@@ -1,0 +1,206 @@
+{CCS_DocType}<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>{pg_Title}</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/{CCS_Style}/Style.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://use.fontawesome.com/2b987283ba.js"></script>
+<style>
+.result {
+        font-weight             : bold;
+        min-width               : 25px;
+        display                 : inline-block;
+        color                   : #5D428F;
+}
+ 
+.HideInBackend{display : none;}
+
+/* start Daniel  widgetSmall 04-10-2017 */
+    .panel-primary>.panel-heading {color: #fff; background-color: #c012f6; border-color: #c012f6;}
+    .panel-primary {border-color: #c012f6; }
+    .bg-success { background-color: #e5e5e5;}
+    .huge {font-size: 40px;}
+    .fa-comments, .fa-arrow-circle-right, .huge, .fa-info-circle,  .fa-bar-chart-o, .fa-file-text{ color: #c012f6;}
+    .logo {
+           background: url(../../Styles/CTOlogo/Images/ctologo-logo.png) no-repeat center center; 
+		   height: 102px;
+           width: 102px;
+           background-size: 102px;
+		   margin: auto;
+    }
+    a:focus, a:hover {color: #bf09f8; }
+    a { color: #bf19fc; }
+   /* Daniel test widget 04-10-2017 end */
+
+	/* start Daniel, container Horizontal 04-10-2017*/
+	.container-widget{  max-width:533px; height:460px; }
+
+	/*  Daniel, container Horizontal 04-10-2017 end*/
+
+</style>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="../../Includes/jquery/justgage/justgage.js"></script>
+<script src="../../Includes/jquery/justgage/raphael-2.1.4.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+</head>
+<body>
+<!-- mini -->
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="">Resultaat van {praktijknaam} </h3>
+    </div>
+    <div class="panel-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="fa fa-comments fa-5x"></i>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge">
+              {gemiddeld} 
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>Gemiddeld cijfer praktijk gebaseerd op <br>
+            {aantal} patiënten waarderingen <br>
+            gedurende de afgelopen 12 maanden.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <span class="pull-left">Meer resultaten</span> <span class="pull-right"><i class="fa fa-arrow-circle-right">&nbsp;</i></span> 
+      <div class="clearfix">
+      </div>
+      <div class="text-center logo">
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>
+<!-- END mini error -->
+<div class="container-fluid">
+        <div class="row">
+          <div>
+            <em>Fout: er is geen resultaat gevonden! </em>
+          </div>
+        </div>
+      </div>
+      <!-- END  mini error -->
+<!-- BEGIN large -->
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading"><h3 class="font-weight-bold">Resultaat van {praktijknaam}</h3> </div>
+    <div class="panel-body">
+        <div class="row">
+		    <div class="col-sm-6">
+		    <div id="gauge"></div>
+            <p class="text-center lead">Net Promotor Score {aantal}</p>
+			</div>
+            <div class="col-sm-6 text-right">
+		    <i class="fa fa-comments fa-5x"></i> 
+            <div class="huge"> {gemiddeld}</div> <p class="lead">Algemene beoordeling</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"> 
+		     <li class="fa fa-info-circle fa-3x"></li> 
+			 <p class="small">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			 <p id="infoStarRate"></p>
+			 </div>
+		  <div class="col-sm-3"> 
+		     <li class="fa fa-comments fa-3x"></li> 
+		  	  <p class="small">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			  <p id="commentsStarRate"></p>
+		  </div>
+		  <div class="col-sm-3">
+		    <li class="fa fa-file-text fa-3x"></li> 
+			<p class="small">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			<p id="fileTextSarRate"></p>
+			</div>
+		  <div class="col-sm-3">
+		    <li class="fa fa-bar-chart-o fa-3x"></li> 
+		     <p class="small">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+			 <p id="chartStarRate"></p>
+		  </div>
+        </div>
+      </div>
+	<div class="panel-footer">
+      <div class="col-sm-6"><h3 class="lead">Reference</h3><p class="small">Reference site about Lorem Ipsum, giving information on its origins,<br/> as well as a random Lipsum generator.</p></div> <div class="col-sm-6"><h3 class="lead">Lorem ipsum</h3><p class="small"> Dolor sit amet, consectetuer adipiscing elit.</p></div> 
+      <div class="clearfix">
+      </div>
+      <div class="logo">
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>
+<!-- BEGIN large error -->
+<div class="container-fluid">
+  <div class="row">
+    <div>
+      <em>Fout: er is geen resultaat gevonden! </em> 
+    </div>
+ 
+  </div>
+ 
+</div>
+<!-- END Large error -->
+
+    <script>
+      var g = new JustGage({
+        id: "gauge",
+        value: 71,
+        min: -100,
+        max: 100,
+        title: "Bezoekers",
+		pointer: true,
+		pointerOptions: {
+          toplength: -15,
+          bottomlength: 10,
+          bottomwidth: 12,
+          color: '#8e8e93',
+          stroke: '#ffffff',
+          stroke_width: 3,
+          stroke_linecap:'round'
+        },
+        customSectors: [{
+          color: '#00ff00',
+          lo: 45,
+          hi: 100
+        }, {
+          color: '#f5ae06',
+          lo: 30,
+          hi: 45
+        }, {
+          color: '#ff0000',
+          lo: 0,
+          hi: 30
+        }],
+	    gaugeWidthScale:0.6,
+        counter: true
+      });
+
+/*RateYo star rating javascript library*/
+ $(function () {
+  $("#infoStarRate,#commentsStarRate,#fileTextSarRate,#chartStarRate").rateYo({
+    numStars: 4,
+    starWidth: "13px",
+	ratedFill: "#c012f6",
+	rating    : 4,
+	fullStar: true,
+    spacing   : "3px",
+	readOnly: true
+  });
+});
+</script>
+
+</body>
+</html>
